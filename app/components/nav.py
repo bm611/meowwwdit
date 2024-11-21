@@ -41,17 +41,19 @@ def nav_section():
             ),
             rx.input(
                 placeholder="Search...",
-                class_name="w-1/3 h-10 mx-4 border-4 border-black rounded-none focus:outline-none focus:ring-0 focus:border-blue-500 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hidden md:block",
+                class_name="w-1/3 h-12 mx-4 border-4 border-black rounded-none focus:outline-none focus:ring-0 focus:border-blue-500 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hidden md:block",
             ),
             rx.hstack(
                 rx.button(
                     rx.icon("plus"),
                     "Create",
+                    size="4",
                     class_name="bg-black text-white px-4 py-2 rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hidden md:flex",
                 ),
                 rx.button(
                     rx.icon("user"),
                     "Ringo",
+                    size="4",
                     class_name="bg-black text-white px-4 py-2 rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hidden md:flex",
                 ),
                 # Mobile Menu

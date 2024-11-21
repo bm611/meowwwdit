@@ -10,46 +10,54 @@ def post(
     upvotes: int,
     comments: int,
     time_posted: datetime,
+    post_id: str,
 ) -> rx.Component:
     return rx.box(
         rx.vstack(
-            # Vote buttons and count
             rx.hstack(
                 rx.vstack(
                     rx.icon_button(
                         rx.icon("chevron-up", size=20),
-                        class_name="hover:text-green-500",
+                        class_name="hover:text-[#B4A69B]",
                         variant="ghost",
                     ),
-                    rx.text(str(upvotes), class_name="font-bold text-sm md:text-base"),
+                    rx.text(
+                        str(upvotes), class_name="font-bold text-sm md:text-base text-[#1F1F1F]"
+                    ),
                     rx.icon_button(
                         rx.icon("chevron-down", size=20),
-                        class_name="hover:text-red-500",
+                        class_name="hover:text-[#B4A69B]",
                         variant="ghost",
                     ),
                     spacing="2",
                     class_name="flex items-center justify-center",
                 ),
-                # Post content
                 rx.vstack(
-                    # Header with subreddit, author, and timestamp
                     rx.hstack(
-                        rx.text(f"r/{subreddit}", class_name="text-xs md:text-sm font-medium"),
-                        rx.text("•", class_name="text-xs md:text-sm text-gray-500"),
+                        rx.text(
+                            f"r/{subreddit}",
+                            class_name="text-xs md:text-sm font-medium text-[#1F1F1F]",
+                        ),
+                        rx.text("•", class_name="text-xs md:text-sm text-[#B4A69B]"),
                         rx.text(
                             f"Posted by {author}",
-                            class_name="text-xs md:text-sm text-gray-500 hidden md:inline",
+                            class_name="text-xs md:text-sm text-[#B4A69B] hidden md:inline",
                         ),
-                        rx.text("•", class_name="text-xs md:text-sm text-gray-500 hidden md:inline"),
+                        rx.text(
+                            "•",
+                            class_name="text-xs md:text-sm text-[#B4A69B] hidden md:inline",
+                        ),
                         rx.text(
                             time_posted.strftime("%b %d, %Y"),
-                            class_name="text-xs md:text-sm text-gray-500",
+                            class_name="text-xs md:text-sm text-[#B4A69B]",
                         ),
                         class_name="flex flex-wrap items-center gap-2",
                     ),
-                    rx.text(title, class_name="font-bold text-lg md:text-xl"),
-                    rx.text(content, class_name="text-sm md:text-base text-gray-600"),
-                    # Comment button at the bottom
+                    rx.text(title, class_name="font-bold text-lg md:text-xl text-[#1F1F1F]"),
+                    rx.text(
+                        content, 
+                        class_name="text-sm md:text-base text-[#1F1F1F]/80 line-clamp-3 overflow-hidden"
+                    ),
                     rx.button(
                         rx.hstack(
                             rx.icon("message-circle", size=16),
@@ -57,7 +65,7 @@ def post(
                             spacing="2",
                             align="center",
                         ),
-                        class_name="bg-black text-white px-4 py-2 rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300",
+                        class_name="bg-[#1F1F1F] text-[#EFEBE7] px-4 py-2 rounded-none shadow-[2px_2px_0px_0px_rgba(31,31,31,1)] hover:shadow-[1px_1px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300",
                     ),
                     align_items="start",
                     spacing="2",
@@ -67,5 +75,6 @@ def post(
             ),
             width="100%",
         ),
-        class_name="w-full p-4 bg-white border-4 border-black rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300",
+        class_name="w-full p-4 bg-[#F7F7F7] border-4 border-[#1F1F1F] rounded-none shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:shadow-[2px_2px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300 cursor-pointer",
+        on_click=rx.redirect(f"/post/{post_id}"),
     )

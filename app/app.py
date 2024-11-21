@@ -1,10 +1,7 @@
 import reflex as rx
 from .components.nav import nav_section
 from .components.feed import feed_section
-
-
-class State(rx.State):
-    pass
+from app.state import State
 
 
 @rx.page(route="/", title="Meowwwdit")
@@ -14,6 +11,14 @@ def index():
         rx.center(
             feed_section(),
         ),
+    )
+
+
+@rx.page(route="/post/[post_id]", title="Post")
+def post():
+    return rx.box(
+        nav_section(),
+        rx.text(State.get_post_id),
     )
 
 
