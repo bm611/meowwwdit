@@ -22,7 +22,8 @@ def post(
                         variant="ghost",
                     ),
                     rx.text(
-                        str(upvotes), class_name="font-bold text-sm md:text-base text-[#1F1F1F]"
+                        str(upvotes),
+                        class_name="font-bold text-sm md:text-base text-[#1F1F1F]",
                     ),
                     rx.icon_button(
                         rx.icon("chevron-down", size=20),
@@ -53,10 +54,12 @@ def post(
                         ),
                         class_name="flex flex-wrap items-center gap-2",
                     ),
-                    rx.text(title, class_name="font-bold text-lg md:text-xl text-[#1F1F1F]"),
                     rx.text(
-                        content, 
-                        class_name="text-sm md:text-base text-[#1F1F1F]/80 line-clamp-3 overflow-hidden"
+                        title, class_name="font-bold text-lg md:text-xl text-[#1F1F1F]"
+                    ),
+                    rx.text(
+                        content,
+                        class_name="text-sm md:text-base text-[#1F1F1F]/80 line-clamp-3 overflow-hidden",
                     ),
                     rx.button(
                         rx.hstack(
@@ -65,7 +68,7 @@ def post(
                             spacing="2",
                             align="center",
                         ),
-                        class_name="bg-[#1F1F1F] text-[#EFEBE7] px-4 py-2 rounded-none shadow-[2px_2px_0px_0px_rgba(31,31,31,1)] hover:shadow-[1px_1px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300",
+                        class_name="mt-2 bg-[#4A90E2] text-white px-4 py-2 rounded-lg border-2 border-[#1F1F1F] shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:shadow-[2px_2px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300",
                     ),
                     align_items="start",
                     spacing="2",
@@ -75,6 +78,6 @@ def post(
             ),
             width="100%",
         ),
-        class_name="w-full p-4 bg-[#F7F7F7] border-4 border-[#1F1F1F] rounded-none shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:shadow-[2px_2px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300 cursor-pointer",
+        class_name="w-full p-4 bg-[#F7F7F7] border-4 border-[#1F1F1F] rounded-xl shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:shadow-[2px_2px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300 cursor-pointer",
         on_click=rx.redirect(f"/post/{post_id}"),
     )

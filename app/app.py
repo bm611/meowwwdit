@@ -24,6 +24,7 @@ def post():
 
 style = {
     "font_family": "Funnel",
+    "background_color": "#F5F5F5",
 }
 
 app = rx.App(

@@ -98,7 +98,7 @@ def sort_buttons() -> rx.Component:
                 class_name="flex items-center justify-center",
             ),
             size="4",
-            class_name="bg-[#F7F7F7] text-[#1F1F1F] px-6 py-3 rounded-none border-4 border-[#1F1F1F] shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:shadow-[2px_2px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300",
+            class_name="bg-[#F7F7F7] text-[#1F1F1F] px-6 py-3 rounded-lg border-4 border-[#1F1F1F] shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:shadow-[2px_2px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300",
         ),
         rx.button(
             rx.hstack(
@@ -108,7 +108,7 @@ def sort_buttons() -> rx.Component:
                 class_name="flex items-center justify-center",
             ),
             size="4",
-            class_name="bg-[#F7F7F7] text-[#1F1F1F] px-6 py-3 rounded-none border-4 border-[#1F1F1F] shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:shadow-[2px_2px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300",
+            class_name="bg-[#F7F7F7] text-[#1F1F1F] px-6 py-3 rounded-lg border-4 border-[#1F1F1F] shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:shadow-[2px_2px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300",
         ),
         rx.button(
             rx.hstack(
@@ -118,7 +118,7 @@ def sort_buttons() -> rx.Component:
                 class_name="flex items-center justify-center",
             ),
             size="4",
-            class_name="bg-[#F7F7F7] text-[#1F1F1F] px-6 py-3 rounded-none border-4 border-[#1F1F1F] shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:shadow-[2px_2px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300",
+            class_name="bg-[#F7F7F7] text-[#1F1F1F] px-6 py-3 rounded-lg border-4 border-[#1F1F1F] shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:shadow-[2px_2px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300",
         ),
         spacing="4",
         class_name="mb-4",
