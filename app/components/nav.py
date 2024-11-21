@@ -36,7 +36,8 @@ def nav_section():
                     "Meowwwdit",
                     class_name="font-extrabold text-2xl md:text-4xl",
                 ),
-                class_name="flex items-center justify-center",
+                class_name="flex items-center justify-center cursor-pointer",
+                on_click=rx.redirect("/"),
             ),
             rx.input(
                 placeholder="Search...",
