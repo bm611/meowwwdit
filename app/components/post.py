@@ -68,7 +68,7 @@ def post(
                             spacing="2",
                             align="center",
                         ),
-                        class_name="mt-2 bg-[#4A90E2] text-white px-4 py-2 rounded-lg border-2 border-[#1F1F1F] shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:shadow-[2px_2px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300",
+                        class_name="mt-2 bg-[#FFA5A5] text-[#1F1F1F] px-4 py-2 rounded-lg border-2 border-[#1F1F1F] shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:shadow-[2px_2px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300",
                     ),
                     align_items="start",
                     spacing="2",
