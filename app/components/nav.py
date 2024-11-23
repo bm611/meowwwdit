@@ -120,7 +120,7 @@ def nav_section():
             rx.hstack(
                 rx.icon("paw-print", size=28),
                 rx.text(
-                    "Furrbit",
+                    "Purrdit",
                     class_name="font-extrabold text-2xl md:text-4xl",
                 ),
                 class_name="flex items-center justify-center cursor-pointer",
@@ -224,7 +224,7 @@ def nav_section():
                         rx.vstack(
                             *nav_menu_items(),
                             align_items="center",
-                            class_name="absolute right-0 top-full py-2 mt-2 w-40 bg-white border-4 border-black rounded-lg shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] z-50",
+                            class_name="absolute right-0 top-full p-4 mt-2 w-52 bg-white border-4 border-black rounded-lg shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] z-50",
                         ),
                     ),
                     position="relative",

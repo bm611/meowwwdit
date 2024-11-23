@@ -9,7 +9,7 @@ def post(
     subreddit: str,
     upvotes: int,
     comments: int,
-    time_posted: datetime,
+    time_posted: str,
     post_id: str,
 ) -> rx.Component:
     return rx.box(
@@ -22,7 +22,7 @@ def post(
                         variant="ghost",
                     ),
                     rx.text(
-                        str(upvotes),
+                        upvotes,
                         class_name="font-bold text-sm md:text-base text-[#1F1F1F]",
                     ),
                     rx.icon_button(
@@ -49,7 +49,7 @@ def post(
                             class_name="text-xs md:text-sm text-[#B4A69B] hidden md:inline",
                         ),
                         rx.text(
-                            time_posted.strftime("%b %d, %Y"),
+                            time_posted,
                             class_name="text-xs md:text-sm text-[#B4A69B]",
                         ),
                         class_name="flex flex-wrap items-center gap-2",
@@ -64,11 +64,13 @@ def post(
                     rx.button(
                         rx.hstack(
                             rx.icon("message-circle", size=16),
-                            rx.text(f"{comments} comments", class_name="text-sm"),
+                            rx.text(
+                                f"{comments} comments", class_name="text-md font-bold"
+                            ),
                             spacing="2",
                             align="center",
                         ),
-                        class_name="mt-2 bg-[#FFA5A5] text-[#1F1F1F] px-4 py-2 rounded-lg border-2 border-[#1F1F1F] shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:shadow-[2px_2px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300",
+                        class_name="mt-2 bg-[#B0C4DE] text-[#1F1F1F] px-4 py-5 rounded-full border-2 border-[#1F1F1F] shadow-[6px_6px_0px_0px_rgba(31,31,31,1)] hover:shadow-[3px_3px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300",
                     ),
                     align_items="start",
                     spacing="2",

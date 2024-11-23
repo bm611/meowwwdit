@@ -1,6 +1,8 @@
 import reflex as rx
 from .components.nav import nav_section
 from .components.feed import feed_section
+
+from .pages.post import post_page
 from app.state import State
 
 
@@ -14,11 +16,11 @@ def index():
     )
 
 
-@rx.page(route="/post/[post_id]", title="Post")
+@rx.page(route="/post/[post_id]", title="Post", on_load=State.set_current_post)
 def post():
     return rx.box(
         nav_section(),
-        rx.text(State.get_post_id),
+        post_page(),
     )
 
 

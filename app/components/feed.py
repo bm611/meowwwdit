@@ -13,7 +13,7 @@ sample_posts = [
         "subreddit": "CatHunting",
         "upvotes": 128,
         "comments": 45,
-        "time_posted": datetime.now() - timedelta(hours=2),
+        "time_posted": "2h ago",
     },
     {
         "post_id": "2",
@@ -23,7 +23,7 @@ sample_posts = [
         "subreddit": "CatLifestyle",
         "upvotes": 256,
         "comments": 89,
-        "time_posted": datetime.now() - timedelta(hours=5),
+        "time_posted": "5h ago",
     },
     {
         "post_id": "3",
@@ -33,7 +33,7 @@ sample_posts = [
         "subreddit": "CatReviews",
         "upvotes": 512,
         "comments": 167,
-        "time_posted": datetime.now() - timedelta(days=1),
+        "time_posted": "1d ago",
     },
     {
         "post_id": "4",
@@ -43,7 +43,7 @@ sample_posts = [
         "subreddit": "CatComplaints",
         "upvotes": 89,
         "comments": 23,
-        "time_posted": datetime.now() - timedelta(hours=1),
+        "time_posted": "1h ago",
     },
     {
         "post_id": "5",
@@ -53,7 +53,7 @@ sample_posts = [
         "subreddit": "CatScience",
         "upvotes": 1024,
         "comments": 234,
-        "time_posted": datetime.now() - timedelta(days=2),
+        "time_posted": "2d ago",
     },
     {
         "post_id": "6",
@@ -63,7 +63,7 @@ sample_posts = [
         "subreddit": "CatProblems",
         "upvotes": 45,
         "comments": 12,
-        "time_posted": datetime.now() - timedelta(minutes=30),
+        "time_posted": "30m ago",
     },
     {
         "post_id": "7",
@@ -73,7 +73,7 @@ sample_posts = [
         "subreddit": "CatConspiracy",
         "upvotes": 789,
         "comments": 156,
-        "time_posted": datetime.now() - timedelta(hours=8),
+        "time_posted": "8h ago",
     },
     {
         "post_id": "8",
@@ -83,7 +83,7 @@ sample_posts = [
         "subreddit": "CatTechnology",
         "upvotes": 342,
         "comments": 67,
-        "time_posted": datetime.now() - timedelta(hours=12),
+        "time_posted": "12h ago",
     },
 ]
 
