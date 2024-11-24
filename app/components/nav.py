@@ -127,8 +127,8 @@ def nav_section():
                 on_click=rx.redirect("/"),
             ),
             rx.input(
-                placeholder="Search...",
-                class_name="w-1/3 h-12 mx-4 border-4 border-black rounded-lg focus:outline-none focus:ring-0 focus:border-blue-500 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hidden md:block",
+                placeholder="Search for purr-fect content...",
+                class_name="w-1/3 h-12 mx-4 border-4 border-black rounded-lg focus:outline-none focus:ring-0 focus:border-blue-500 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hidden md:block text-lg",
             ),
             rx.hstack(
                 rx.dialog.root(
@@ -232,6 +232,6 @@ def nav_section():
                 spacing="4",
                 class_name="flex items-center justify-center",
             ),
-            class_name="w-full justify-between md:justify-around items-center bg-white p-4 border-4 border-black rounded-lg shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]",
+            class_name="w-full justify-between md:justify-around items-center bg-[#F0F0F0] p-4 border-4 border-black rounded-lg shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]",
         ),
     )
