@@ -16,4 +16,5 @@ def post_page():
             time_posted=State.current_post["time_posted"],
             post_id=State.current_post["post_id"],
         ),
+        class_name="mt-6",
     )

@@ -1,5 +1,4 @@
 import reflex as rx
-from datetime import datetime
 
 
 def post(
@@ -42,7 +41,7 @@ def post(
                         rx.text("•", class_name="text-xs md:text-sm text-[#B4A69B]"),
                         rx.text(
                             f"Posted by {author}",
-                            class_name="text-xs md:text-sm text-[#B4A69B] hidden md:inline",
+                            class_name="text-xs md:text-sm hidden md:inline",
                         ),
                         rx.text(
                             "•",
@@ -50,7 +49,7 @@ def post(
                         ),
                         rx.text(
                             time_posted,
-                            class_name="text-xs md:text-sm text-[#B4A69B]",
+                            class_name="text-xs md:text-sm",
                         ),
                         class_name="flex flex-wrap items-center gap-2",
                     ),
@@ -80,6 +79,6 @@ def post(
             ),
             width="100%",
         ),
-        class_name="w-full p-4 bg-[#F7F7F7] border-4 border-[#1F1F1F] rounded-xl shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:shadow-[2px_2px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300 cursor-pointer",
+        class_name="w-full p-4 bg-[#98FB98] border-4 border-[#1F1F1F] rounded-xl shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:shadow-[2px_2px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300 cursor-pointer",
         on_click=rx.redirect(f"/post/{post_id}"),
     )

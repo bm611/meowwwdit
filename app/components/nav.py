@@ -31,13 +31,13 @@ def nav_menu_items() -> List[rx.Component]:
     return [
         rx.button(
             rx.hstack(rx.icon("search", size=20), "Search", align="center"),
-            class_name="w-full text-left bg-white hover:bg-gray-100 px-4 py-2 text-black rounded-lg border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]",
+            class_name="w-full text-left bg-[#FF5252] hover:bg-[#FF7070] px-4 py-2 text-white rounded-lg border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]",
         ),
         rx.dialog.root(
             rx.dialog.trigger(
                 rx.button(
                     rx.hstack(rx.icon("plus", size=20), "Create", align="center"),
-                    class_name="w-full text-left bg-[#4A90E2] hover:bg-[#4682B4] px-4 py-2 text-white rounded-lg border-4 border-[#1F1F1F] shadow-[6px_6px_0px_0px_rgba(31,31,31,1)] hover:shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300",
+                    class_name="w-full text-left bg-[#4A90E2] hover:bg-[#6BA5E7] px-4 py-2 text-white rounded-lg border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300",
                 )
             ),
             rx.dialog.content(
