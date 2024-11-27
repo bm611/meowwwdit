@@ -26,18 +26,23 @@ def sidebar() -> rx.Component:
     ]
     return rx.box(
         rx.vstack(
-            rx.text("Subreddits", class_name="font-bold text-2xl mb-4"),
+            rx.text("Subreddits", class_name="text-gray-800 font-bold text-2xl"),
             *[
-                rx.hstack(
-                    rx.icon(icon, size=16),
-                    rx.text(sub, class_name="text-sm"),
-                    class_name="mb-2 flex items-center justify-left",
+                rx.link(
+                    rx.hstack(
+                        rx.icon(icon, size=16, class_name="text-gray-600"),
+                        rx.text(sub, class_name="text-gray-700 font-medium hover:text-blue-600 transition-colors"),
+                        class_name="flex items-center gap-2",
+                    ),
+                    href="#",
+                    class_name="no-underline",
                 )
                 for sub, icon in subreddits
             ],
-            spacing="3",
+            spacing="4",
             align_items="stretch",
+            class_name="w-full",
         ),
-        class_name="hidden lg:block ml-4 mt-4 bg-[#FFD93D] p-6 rounded-lg border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5",
+        class_name="hidden lg:block ml-4 mt-4 w-full p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300",
         width="250px",
     )

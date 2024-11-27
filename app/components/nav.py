@@ -31,84 +31,64 @@ def nav_menu_items() -> List[rx.Component]:
     return [
         rx.button(
             rx.hstack(rx.icon("search", size=20), "Search", align="center"),
-            class_name="w-full text-left bg-[#FF5252] hover:bg-[#FF7070] px-4 py-2 text-white rounded-lg border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]",
+            class_name="w-full text-left bg-white text-gray-800 px-4 py-2 rounded-md border border-gray-200 hover:bg-gray-100 transition-colors duration-200",
         ),
         rx.dialog.root(
             rx.dialog.trigger(
                 rx.button(
                     rx.hstack(rx.icon("plus", size=20), "Create", align="center"),
-                    class_name="w-full text-left bg-[#4A90E2] hover:bg-[#6BA5E7] px-4 py-2 text-white rounded-lg border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300",
+                    class_name="w-full text-left bg-white text-gray-800 px-4 py-2 rounded-md border border-gray-200 hover:bg-gray-100 transition-colors duration-200",
                 )
             ),
             rx.dialog.content(
                 rx.dialog.title(
-                    "Create a New Post",
-                    class_name="text-xl font-bold mb-4",
+                    "New Post",
+                    class_name="text-lg font-semibold mb-2",
                 ),
-                rx.dialog.description(
-                    "Share your thoughts with the community.",
-                    class_name="text-sm text-gray-500 mb-4",
-                ),
-                rx.flex(
-                    rx.text(
-                        "Title",
-                        as_="div",
-                        class_name="font-bold mb-2",
-                    ),
+                rx.vstack(
                     rx.input(
-                        placeholder="Enter your post title",
+                        placeholder="Title",
                         on_change=NavState.set_title,
                         value=NavState.title,
-                        class_name="w-full h-12 p-3 border-4 border-[#1F1F1F] rounded-xl bg-white shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:shadow-[2px_2px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-0 focus:border-[#4A90E2] mb-4",
-                    ),
-                    rx.text(
-                        "Description",
-                        as_="div",
-                        class_name="font-bold mb-2",
+                        class_name="w-full p-2 border border-gray-300 rounded-md mb-2",
                     ),
                     rx.text_area(
-                        placeholder="Enter your post content",
+                        placeholder="Content",
                         on_change=NavState.set_description,
                         value=NavState.description,
-                        class_name="w-full p-3 border-4 border-[#1F1F1F] rounded-xl bg-white shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:shadow-[2px_2px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-0 focus:border-[#4A90E2] mb-4",
-                    ),
-                    rx.text(
-                        "Subreddit",
-                        as_="div",
-                        class_name="font-bold mb-2",
+                        class_name="w-full p-2 border border-gray-300 rounded-md mb-2",
                     ),
                     rx.input(
-                        placeholder="Enter subreddit name",
+                        placeholder="Subreddit",
                         on_change=NavState.set_subreddit,
                         value=NavState.subreddit,
-                        class_name="w-full h-12 p-3 border-4 border-[#1F1F1F] rounded-xl bg-white shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:shadow-[2px_2px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-0 focus:border-[#4A90E2] mb-4",
+                        class_name="w-full p-2 border border-gray-300 rounded-md mb-2",
                     ),
-                    direction="column",
-                ),
-                rx.flex(
-                    rx.dialog.close(
-                        rx.button(
-                            "Cancel",
-                            class_name="bg-gray-200 text-[#1F1F1F] px-6 py-3 rounded-xl border-4 border-[#1F1F1F] shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:shadow-[2px_2px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300",
+                    rx.hstack(
+                        rx.dialog.close(
+                            rx.button(
+                                "Cancel",
+                                class_name="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors duration-200",
+                            ),
                         ),
-                    ),
-                    rx.dialog.close(
-                        rx.button(
-                            "Post",
-                            class_name="bg-[#FFA5A5] text-[#1F1F1F] px-6 py-3 rounded-xl border-4 border-[#1F1F1F] shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:shadow-[2px_2px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300",
-                            on_click=NavState.create_post,
+                        rx.dialog.close(
+                            rx.button(
+                                "Post",
+                                class_name="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-200",
+                                on_click=NavState.create_post,
+                            ),
                         ),
+                        justify="end",
+                        spacing="2",
                     ),
-                    justify="end",
-                    spacing="3",
-                    margin_top="4",
+                    align_items="stretch",
                 ),
-                class_name="bg-white p-8 rounded-xl border-4 border-[#1F1F1F] shadow-[8px_8px_0px_0px_rgba(31,31,31,1)]",
+                class_name="bg-white p-4 rounded-md shadow-md",
             ),
         ),
         rx.button(
             rx.hstack(rx.icon("user", size=20), "Profile", align="center"),
-            class_name="w-full text-left bg-[#E67E22] hover:bg-[#FF9900] px-4 py-2 text-white rounded-lg border-4 border-[#1F1F1F] shadow-[6px_6px_0px_0px_rgba(31,31,31,1)]",
+            class_name="w-full text-left bg-white text-gray-800 px-4 py-2 rounded-md border border-gray-200 hover:bg-gray-100 transition-colors duration-200",
         ),
     ]
 
@@ -127,8 +107,8 @@ def nav_section():
                 on_click=rx.redirect("/"),
             ),
             rx.input(
-                placeholder="Search for purr-fect content...",
-                class_name="w-1/3 h-12 mx-4 border-4 border-black rounded-lg focus:outline-none focus:ring-0 focus:border-blue-500 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hidden md:block text-lg",
+                placeholder="Search...",
+                class_name="w-1/3 h-12 mx-4 border-4 border-black rounded-lg focus:outline-none focus:ring-0 focus:border-blue-500 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hidden md:block text-xl",
             ),
             rx.hstack(
                 rx.dialog.root(
@@ -137,7 +117,7 @@ def nav_section():
                             rx.icon("plus"),
                             "Create",
                             size="4",
-                            class_name="bg-[#4A90E2] text-white px-4 py-2 rounded-lg border-4 border-[#1F1F1F] shadow-[6px_6px_0px_0px_rgba(31,31,31,1)] hover:shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300 hidden md:flex",
+                            class_name="bg-white text-[#1F1F1F] px-4 py-2 rounded-lg border-4 border-[#1F1F1F] shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:shadow-[2px_2px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300 hidden md:flex items-center gap-2",
                         )
                     ),
                     rx.dialog.content(
@@ -210,7 +190,7 @@ def nav_section():
                     rx.icon("user"),
                     "Ringo",
                     size="4",
-                    class_name="bg-[#E67E22] text-white px-4 py-2 rounded-lg border-4 border-[#1F1F1F] shadow-[6px_6px_0px_0px_rgba(31,31,31,1)] hover:shadow-[4px_4px_0px_0px_rgba(31,31,31,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300 hidden md:flex",
+                    class_name="bg-white border-4 border-black text-gray-800 px-4 py-2 rounded-lg hidden md:flex shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-300",
                 ),
                 # Mobile Menu
                 rx.box(

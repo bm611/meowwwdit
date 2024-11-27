@@ -10,20 +10,22 @@ def r_sidebar() -> rx.Component:
     ]
     return rx.box(
         rx.vstack(
-            rx.text("Purrdit Stats", class_name="font-bold text-center text-2xl mb-4"),
             *[
                 rx.hstack(
-                    rx.icon(icon, size=32),
+                    rx.icon(icon, size=24, class_name="text-gray-600"),
                     rx.vstack(
-                        rx.text(label, class_name="text-lg font-medium"),
-                        rx.text(value, class_name="text-lg font-bold"),
+                        rx.text(label, class_name="text-gray-700 font-medium"),
+                        rx.text(value, class_name="text-gray-800 font-bold"),
                         align_items="start",
+                        spacing="1",
                     ),
-                    class_name="flex bg-[#FFD93D] p-4 rounded-lg border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5",
+                    class_name="flex items-center p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow duration-300 gap-4",
                 )
                 for label, value, icon in stats
             ],
+            spacing="4",
             align_items="stretch",
+            class_name="w-full",
         ),
         class_name="hidden md:block ml-4 mt-4 mr-4",
         width="250px",
